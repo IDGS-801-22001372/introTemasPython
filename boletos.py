@@ -17,7 +17,7 @@ class Boletos:
         elif 3 <= self.cantidadBoletos <= 5:
             descuento = total * 0.10
         
-        totalDescuento = total - descuento
+        totalDescuento = total-descuento
         
         if self.tarjetaCinepolis:
             descuentoTarjeta = totalDescuento * 0.10
@@ -28,7 +28,7 @@ class Boletos:
     def total(self):
         boletosDisponibles = self.numPersonas * self.maxBoletosPersona
         if self.cantidadBoletos < 1 or self.cantidadBoletos > boletosDisponibles:
-            return "Cantidad de boletas no válida."
+            return "Cantidad de boletos no valida."
         
         total = self.cantidadBoletos * self.precioBoleto
         totalFinal = self.descuento(total)
@@ -50,7 +50,7 @@ def menu():
     transacciones = [] 
 
     while True:
-        print("\nMenú:")
+        print("\nMenu:")
         print("1. Comprar boletos")
         print("2. Salir")
         opcion = input("Seleccione una opcion: ")
@@ -58,8 +58,8 @@ def menu():
         if opcion == "2":
             with open("Tickets.txt", "w") as texto:
                 for transaccion in transacciones:
-                    texto.write(transaccion + "\n" + "-"*40 + "\n")
-            print("Gracias por su visita. ¡Hasta luego!")
+                    texto.write(transaccion + "\n" + "----------------------------" + "\n")
+            print("Gracias por su visita")
             break
         elif opcion == "1":
             nombre = input("Ingrese su nombre: ")
@@ -68,7 +68,7 @@ def menu():
                 num_personas = int(input("Ingrese cuantas personas van: "))
                 #validacion boletos
                 if num_personas < 1:
-                    print("El número de personas debe ser mayor que 0. Intente nuevamente.")
+                    print("El num de personas debe ser mayor que 0. Intente nuevamente.")
                 else:
                     break 
 
@@ -79,14 +79,24 @@ def menu():
                 if cantidad_boletos < num_personas:
                     print("No puedes comprar menos boletos que las personas que van. Intenta nuevamente.")
                 elif cantidad_boletos > max_boletos:
-                    print(f"No puedes comprar más de {max_boletos} boletos. Intenta nuevamente.")
+                    print(f"No puedes comprar más de {max_boletos} boletos.")
+                    opcion = input("Quieres cambiar el numero de perosas? (s/n): ").strip().lower()
+                    if opcion == 's':
+                        while True:
+                            num_personas=int(input("Ingrese un nuevo numero de personas: "))
+                            if num_personas<1:
+                                print("El numero de personas debe ser mayor que 0. intente de nuevo")
+                            else:
+                                break
+                    else:
+                        print("Ingresa una cantidad de boletos valida.") 
                 elif cantidad_boletos < 1:
                     print("La cantidad de boletos debe ser mayor que 0. Intente nuevamente.")
                 else:
                     break
 
             while True:
-                usa_tarjeta_cinepolis = input("¿Usará tarjeta Cinepolis? (s/n): ").strip().lower()
+                usa_tarjeta_cinepolis = input("usara tarjeta Cinepolis? (s/n): ").strip().lower()
                 if usa_tarjeta_cinepolis == 's':
                     usa_tarjeta = True
                     break
@@ -95,13 +105,13 @@ def menu():
                     break
                 else:
                     #validacion de si o no
-                    print("Opción no válida. Por favor ingrese 's' o 'n'.")
+                    print("Opcion no valida. Por favor ingrese 's' o 'n'.")
 
             compra = Boletos(nombre, num_personas, cantidad_boletos, usa_tarjeta)
             resumen = compra.resumen()
             transacciones.append(resumen)
         else:
-            print("Opción no válida, intente nuevamente.")
+            print("Opcion no valida, intente nuevamente.")
 
 def main():
     menu()
