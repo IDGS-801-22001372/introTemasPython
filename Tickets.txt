@@ -1,0 +1,7 @@
+Cliente: Joel
+Numero de personas: 15
+Cantidad de boletos: 15
+Usa tarjeta Cinepolis: Si
+Total a pagar: $137.70
+
+----------------------------------------

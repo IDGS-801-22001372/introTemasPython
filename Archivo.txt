@@ -1,2 +1,14 @@
-Hola, soy un archivo de texto
-Hola mundo
+Cliente: Joel
+N�mero de personas: 5
+Cantidad de boletas: 5
+Usa tarjeta Cinepolis: No
+Total a pagar: $54.00
+
+----------------------------------------
+Cliente: David
+N�mero de personas: 7
+Cantidad de boletas: 7
+Usa tarjeta Cinepolis: S�
+Total a pagar: $64.26
+
+----------------------------------------
