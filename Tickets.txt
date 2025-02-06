@@ -1,14 +1,24 @@
-Cliente: Joel
+Cliente: joel - Total: $137.70
+-----------------------
+Cliente: joel - Total: $24.00
+-----------------------
+
+Resumen del dia:
+
+Cliente: joel
 Numero de personas: 3
-Cantidad de boletos: 20
-Usa tarjeta Cinepolis: Si
-Total a pagar: $183.60
+Cantidad de boletos: 15
+Metodo de Pago: Tarjeta Cinepolis
+Total a pagar: $137.70
 
 ----------------------------
-Cliente: Maico
-Numero de personas: 5
-Cantidad de boletos: 35
-Usa tarjeta Cinepolis: Si
-Total a pagar: $321.30
+
+Cliente: joel
+Numero de personas: 2
+Cantidad de boletos: 2
+Metodo de Pago: Efectivo
+Total a pagar: $24.00
 
 ----------------------------
+
+Corte de venta, total de tickets: $161.70
